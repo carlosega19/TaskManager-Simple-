@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+     <script src="https://kit.fontawesome.com/78befb0413.js" crossorigin="anonymous"></script>
+     
+     <!-- Required meta tags -->
+     <title>Task Manager</title>
+</head>
+<body>
+     <header>
+          <h1>My Tasks</h1>
+     </header>
+     <div class="main">
+
+          <div class="taskmanager">
+               <div class="taskmanager_inputs">
+                    <form class="tasks_form">
+                         <input class="task_title" type="text">
+                         <input class="task_time" type="number" placeholder="Hours" min="0" step="any">
+                         <button class="add_task"><i class="fa fa-plus"></i></button>
+                    </form>
+               </div>
+               <div class="tasks">
+                    <!-- Dinamic CONTENT -->
+               </div>
+               <h1>TOTAL:<span class="totalH"></span></h1>
+          </div>
+     </div>
+</body>
+     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+     <script src="js/main.js"></script>
+</html>

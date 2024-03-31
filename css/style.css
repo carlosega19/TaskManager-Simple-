@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap');
+
+*{
+     margin: 0;
+     padding: 0;
+     font-family: "Kdam Thmor Pro", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+}
+
+header{
+     background-color: #246a73;
+     padding: 20px;
+     font-size: 20px;
+     font-weight: 800;
+     text-shadow:  1px 1px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-bottom: 1px solid rgb(0, 0, 0);
+     border-radius: 15px;
+     margin: 15px;
+}
+
+header h1{
+     color: #160f29;
+}
+
+
+body{
+     display: flex;
+     flex-direction: column;
+     height: 100vh;
+     background-color: #caf0f8;
+}
+
+.main{
+     height: 100%;
+     width: 100%;
+     background-color: #caf0f8;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+}
+
+
+.taskmanager{
+     width: 50%;
+     height: 100%;
+     margin-top: 20px;
+     box-sizing: border-box;
+     padding: 20px;
+     border-radius: 10px;
+     transition: all .2s ease-in-out;
+
+     display: flex;
+     flex-direction: column;
+     justify-content: flex-start;
+     align-items: center;
+}
+.taskmanager h1{
+     color: #160f29;
+}
+.taskmanager_inputs{
+     background-color: #246a73;
+     padding: 20px;
+     border-radius: 10px;
+
+     width: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 15px;
+}
+.taskmanager_inputs form{
+     width: 100%;
+     display: flex;
+     justify-content: center;
+}
+.task_title{
+     width: 50%;
+     font-size: 16px;
+     color: white;
+     outline: none;
+     border: none;
+     background-color: transparent;
+     resize: none;
+     overflow: hidden;
+     text-overflow: ellipsis;
+     word-wrap: break-word;
+     border-bottom: 2px solid #160f29;
+}
+.add_task{
+     width: 70px;
+     cursor: pointer;
+     height: 70/16*100%;
+     border: 2px solid #160f29;
+     border-radius: 8px;
+     font-size: 18px;
+     color: #368f8b;
+     margin-left: 25px;
+     transition: all 0.2s ease-in-out;
+}
+.taskmanager_inputs .add_task:hover{
+     filter: brightness(90%);
+     scale:  110%;
+}
+
+
+.tasks{
+     margin-top: 20px;
+     background-color: #246a73;
+     height: 100%;
+     width: 80%;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding-top: 20px;
+     overflow: auto;
+     border-radius: 15px;
+     border-bottom: 1px solid white;
+     gap: 20px;
+}
+
+.task{
+     background-color: #160f29;
+     width: 80%;
+     padding: 10px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     position: relative;
+     z-index: 1;
+     border-radius: 5px;
+}
+.task h2{
+     color: #ffffff;
+}
+.task p{
+     color: #ffffff;
+}
+.task input{
+     color:rgba(217, 41, 41, 0.856);
+     font-size: 14pt;
+     border: none;
+     outline: none;
+     background-color: transparent;
+     cursor: pointer;
+     padding: 10px;
+     transition: .3s ease all;
+}
+.task input:checked{
+     color: #1bf4a5;
+}
+.task input {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     background-color: transparent;
+}
+.task_time{
+     width: 35px;
+     margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 680px) {
+     .taskmanager{
+          width:  90%;
+     }
+     .task{
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+     }
+     .task h2{
+          text-align: center;
+     }
+}
+
+/*
+     background-image: url("../img/plus.svg");
+     background-position: center;
+     background-repeat: no-repeat;
+     background-origin: content-box;
+     -webkit-background-clip: content-box;
+     background-clip: content-box;
+*/
