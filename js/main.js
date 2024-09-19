@@ -18,12 +18,12 @@ let taskChecks = document.querySelectorAll('.removeTask');
 updateView();
 
 function createCard(task){
-     const {title , duration } = task;
+     const { title , duration } = task;
      let html = `   <div class="task">
                          <h2>${title}</h2>
-                         <p>Time: <span>${duration}h</span></p>
+                         <hr>
+                         <p><span>${duration} h</span></p>
                          <input class="removeTask fa-regular fa-circle-check" type="checkbox">
-
                     </div>`;
      return html;
 }
@@ -33,6 +33,7 @@ function total(){
 }
 function updateView(){
      tasksContainer.innerHTML = '';
+     taskTitle.value = '';
      for (const task of tasks) {
           let card = createCard(task);
           tasksContainer.innerHTML += card;
