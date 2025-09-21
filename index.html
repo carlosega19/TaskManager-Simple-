@@ -1,38 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>TODO APP</title>
      <link rel="stylesheet" href="css/style.css">
-     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-     <script src="https://kit.fontawesome.com/78befb0413.js" crossorigin="anonymous"></script>
-     
-     <!-- Required meta tags -->
-     <title>Task Manager</title>
 </head>
 <body>
-     <header>
-          <h1>My Tasks</h1>
-     </header>
-     <div class="main">
+     <div class="container">
+          <div class="todo-app">
+               <header class="app-header">
+                    <div class="header-content">
+                         <svg class="list-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                         <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+                         <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+                         <path d="M9 14l2 2 4-4"/>
+                         </svg>
+                         <h1>Tasks</h1>
+                    </div>
+               </header>
 
-          <div class="taskmanager">
-               <div class="taskmanager_inputs">
-                    <form class="tasks_form">
-                         <input class="task_title" type="text" placeholder="Task title . . .">
-                         <input class="task_time" type="number" placeholder="Hours" min="0" step="any">
-                         <button class="add_task"><i class="fa fa-plus"></i></button>
+               <main class="app-content">
+                    <!-- Input para agregar tareas -->
+                    <form class="todo-input-form" id="todoForm">
+                         <input 
+                         type="text" 
+                         id="todoInput" 
+                         placeholder="Add new Task..." 
+                         class="todo-input"
+                         autocomplete="off"
+                         >
+                         <button type="submit" class="add-btn" id="addBtn">
+                         <svg class="plus-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                              <line x1="12" y1="5" x2="12" y2="19"/>
+                              <line x1="5" y1="12" x2="19" y2="12"/>
+                         </svg>
+                         Add
+                         </button>
                     </form>
-               </div>
-               <div class="tasks">
-                    <!-- Dinamic CONTENT -->
-               </div>
-               <h1><span class="totalH"></span></h1>
+
+                    <!-- Filtros -->
+                    <div class="todo-filters" id="todoFilters" style="display: none;">
+                         <div class="filter-buttons">
+                         <button class="filter-btn active" data-filter="all">Todas</button>
+                         <button class="filter-btn" data-filter="active">
+                              Actives <span class="count" id="activeCount">(0)</span>
+                         </button>
+                         <button class="filter-btn" data-filter="completed">
+                              Completed <span class="count" id="completedCount">(0)</span>
+                         </button>
+                         </div>
+                         <button class="clear-completed-btn" id="clearCompleted" style="display: none;">
+                         Clear
+                         </button>
+                    </div>
+
+                    <!-- Lista de tareas -->
+                    <div class="todo-list" id="todoList"></div>
+
+                    <!-- Estado vacío -->
+                    <div class="empty-state" id="emptyState">
+                         <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                         <polyline points="22,4 12,14.01 9,11.01"/>
+                         </svg>
+                         <p class="empty-title">No tasks added yet!</p>
+                         <p class="empty-subtitle">Add a new Task to start</p>
+                    </div>
+
+                    <!-- Estado de filtro vacío -->
+                    <div class="filter-empty-state" id="filterEmptyState" style="display: none;">
+                         <p>No Tasks found</p>
+                    </div>
+
+                    <!-- Estadísticas -->
+                    <div class="todo-stats" id="todoStats" style="display: none;">
+                         Total: <span id="totalCount">0</span> taks • 
+                         Left: <span id="pendingCount">0</span> • 
+                         Completed: <span id="completedStatsCount">0</span>
+                    </div>
+               </main>
           </div>
      </div>
-</body>
-     <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
-     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
      <script src="js/main.js"></script>
+</body>
 </html>
